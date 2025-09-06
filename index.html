@@ -104,12 +104,13 @@
           Choose Your Trees
         </h1>
         <div
-          class="grid grid-cols-1 md:grid-cols-[12fr_73fr_14fr] gap-4 w-full"
+          class="grid grid-cols-1 md:grid-cols-[12fr_73fr_14fr] gap-4 w-full items-start"
         >
           <div class="left flex flex-col gap-2">
             <h3 class="">Categories</h3>
-            <div id="cat-entries" class="categories">
+            <div id="cat-entries" class="categories flex flex-col gap-1">
               <button
+                id="category-0"
                 class="hover:bg-[#15803D] hover:text-white cursor-pointer w-[100%] text-left px-4 py-2 rounded-lg inter"
               >
                 All Trees
@@ -120,7 +121,7 @@
             id="product-entries"
             class="middle grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-4 pb-4 items-stretch"
           ></div>
-          <div class="right bg-red-300">Right</div>
+          <div class="right bg-white min-h-[1200px]">Right</div>
         </div>
       </section>
     </main>

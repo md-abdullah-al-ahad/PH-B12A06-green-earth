@@ -14,6 +14,7 @@ const displayCategory = (categories) => {
     const btnDiv = document.createElement("div");
     btnDiv.innerHTML = `
     <button
+      id = "category-${category["id"]}"
       class="hover:bg-[#15803D] hover:text-white cursor-pointer w-[100%] text-left px-4 py-2 rounded-lg inter"
       >
         ${category["category_name"]}
@@ -24,6 +25,7 @@ const displayCategory = (categories) => {
 };
 const displayAllProducts = (products) => {
   const productContainer = document.getElementById("product-entries");
+  productContainer.innerHTML = "";
   for (let product of products) {
     const productDiv = document.createElement("div");
     productDiv.innerHTML = `
@@ -57,5 +59,28 @@ const displayAllProducts = (products) => {
     productContainer.append(productDiv);
   }
 };
-loadAllProducts();
+
+document.getElementById("cat-entries").addEventListener("click", (e) => {
+  if (e.target.id.startsWith("category-")) {
+    const categoryId = e.target.id.replace("category-", "");
+    if (categoryId == 0) {
+      document
+        .querySelectorAll(".active")
+        .forEach((btn) => btn.classList.remove("active"));
+      e.target.classList.add("active");
+      return loadAllProducts();
+    }
+    fetch(`https://openapi.programming-hero.com/api/category/${categoryId}`)
+      .then((res) => res.json())
+      .then((json) => {
+        document
+          .querySelectorAll(".active")
+          .forEach((btn) => btn.classList.remove("active"));
+        e.target.classList.add("active");
+        displayAllProducts(json.plants);
+      });
+  }
+});
+
 loadCategories();
+loadAllProducts();
