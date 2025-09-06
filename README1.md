@@ -1,114 +1,165 @@
-# ENGLISH <img width="25px" src="./assets/logo.png" /> JANALA
+## WELCOME TO ( সহজ সরল সিম্পল ) ASSIGNMENT-006
+
+### 📅 Deadline For 60 marks: 9th September, 2025 (11:59 pm ⏱️)
+
+### 📅 Deadline For 50 marks : 13th September , 2025 (6:00 pm⏱️)
+
+### 📅 Deadline For 30 marks: Any time after 13the September , 2025 (6:01 pm⏱️).
 
 ---
+# Green Earth
 
-## ⚡ API Endpoints
 
-1. Get ⚡ All Levels
+## Private Repository: https://classroom.github.com/a/nVZrg5R9
+
+
+---
+🌴 API Endpoints
+---
+1. Get 🌴All Plants
+```bash
+https://openapi.programming-hero.com/api/plants
+```
+
+2. Get 🌴All categories <br/>
+```bash
+https://openapi.programming-hero.com/api/categories
+```
+
+
+3. Get 🌴plants by categories <br/>
+```bash
+https://openapi.programming-hero.com/api/category/${id}
+```
 
 ```bash
-https://openapi.programming-hero.com/api/levels/all
+https://openapi.programming-hero.com/api/category/1
 ```
 
-1. Get ⚡ Words by Levels <br/>
-   https:// openapi.programming-hero.com/api/level/{id}
+4. Get 🌴Plants Detail <br/>
 
 ```bash
-https://openapi.programming-hero.com/api/level/5
+https://openapi.programming-hero.com/api/plant/${id}
 ```
-
-1. Get ⚡ Words Detail <br/>
-   https:// openapi.programming-hero.com/api/word/{id}
 
 ```bash
-https://openapi.programming-hero.com/api/word/5
+https://openapi.programming-hero.com/api/plant/1
 ```
-
-1. Get ⚡ All Words <br/>
-
-```bash
-https://openapi.programming-hero.com/api/words/all
-```
-
-# Work To do
-
-### 1. Show Levels on The UI
-
-- [ ] Show a center-aligned heading as Figma
-
 ---
 
-- [ ] Create dynamically generated buttons from **API-01** for each lesson
-- [ ] Lesson Buttons will be displayed on page load
+
+
+
+## ✅ Main Requirements 
+
+#### 1) Navbar
+
+- Website **logo/name** on the **left**  
+- **Menu items** in the **center** 
+- **Plant a Tree button** on the **right** 
+
+#### 2) Banner 
+- A **background image**  
+- A **title** and **subtitle**  
+- A **centered button**  
+
+#### 3) About Campaign
+- **Section heading**  
+- **Image on the left**, **text on the right**  
+
+#### 4) Our Impact Section 
+- Show **3 cards** with campaign **statistics**  
+
+#### 5) Plant a Tree Today Section & Footer
+- **Form**: Name, Email, Number of Trees  
+- **Footer** with copyright info 
+
+#### 6) Responsiveness 
+- Website must be **mobile responsive**  
 
 ---
+#### 7) Create a README file to answer the following question-
 
-### 2. Show Word Cards Based on Level
 
-- [ ] Show a default text that will be displayed in the Vocabulary section initially
-- [ ] on Clicking a Specific Lesson Button Load All the words from **API-02**
-- [ ] Display all words for a selected lesson in a card format, showing:
+#### 1) What is the difference between var, let, and const?
 
-  - [ ] Word
-  - [ ] Word meaning & pronunciation
-  - [ ] Two buttons with relevant icons as per Figma
+#### 2) What is the difference between map(), forEach(), and filter()? 
 
-- [ ] Show **\*No Word Found** message if no words exist for a lesson
+#### 3) What are arrow functions in ES6?
 
----
+#### 4) How does destructuring assignment work in ES6?
 
-- [ ] Create functionality to highlight the active lesson button
+#### 5) Explain template literals in ES6. How are they different from string concatenation?
 
----
+## ⚙️ Functionalities 
 
-### 3. Use Different Color on The Active Level Button
+1) Category Loading 
+Load Tree Categories dynamically on the left side.
 
-- [ ] After Successfully Loading words of a level , diffirentiate the button so user can understand which button is active
+2) Category Click → Tree Data 
+On clicking a category: load trees of that category.
 
-### 4. Vocabulary Details
+Display in a 3-column card layout.
 
-- [ ] Create functionality to open a modal when clicking the details icon
-- [ ] Data will be load from **API-03**
-- [ ] modal will displays:
-  - [ ] Word with pronunciation
-  - [ ] Example sentence
-  - [ ] Synonyms
-  - [ ] A "Complete Learning" button to close the modal
+3) Card Contents 
+ Each card includes:
 
-### 5. Handling Invalid Data
+        - Image
 
-- [ ] avoid displaying falsy values like `undefined` or `null`
-- [ ] display relevant words if no data is found
+        -  Name
 
-### 6. Loading Spinner
+        - Short description
 
-- [ ] Create a loading spinner that will be display when vocabulary is loading from API
+        - Category
 
-### 7. Implement Search Functionality
+        - Price
 
-- [ ] Take a input Box.
-- [ ] on Changing value It will Search word and show in the UI.
-- [ ] If anyone Do search reset active button
+        - Add to Cart button
 
-### 8. Save Word Feature
+4) Modal on Card Click 
+Clicking a tree name on a card opens a modal with full tree details.
 
-- [ ] in the UI of Card add a button `Heart icon`
-- [ ] on Clicking it. Store the Word in the Saved Box
-- [ ] Show Saved words in a Different Section.
 
-### 9. Speak your Vocabularies
+##  🧪 Challenges 
 
-- [ ] Create functionality for voice pronunciation of vocabulary words
-- [ ] Use below function and implement on clicking sound icon
 
-```js
-function pronounceWord(word) {
-  const utterance = new SpeechSynthesisUtterance(word);
-  utterance.lang = "en-EN"; // English
-  window.speechSynthesis.speak(utterance);
-}
-```
+    1) Add to Cart 
+    Clicking Add to Cart: - Adds the tree to Cart List
+                          - Shows tree name 
 
-For More >> you can explore this implementation 👉 [https://codepen.io/Ferdous-Zihad/pen/PwoJMmJ](https://codepen.io/Ferdous-Zihad/pen/PwoJMmJ)
+    2) Total Calculation 
+    Calculate total price of trees in cart.
+
+    3) Remove from Cart 
+    Clicking ❌ removes tree and deducts price from total.
+
+    4) Loading Spinner
+    Show spinner while data is loading.
+
+    5) Active Button State 
+    Highlight active category button when selected.
+
+
+
+🧰 Technology Stack:
+        
+        HTML
+
+        CSS (Vanilla / Tailwind / DaisyUI)
+
+        JavaScript (Vanilla only, no frameworks)
+
+📌 Rules
+✅ At least 5 meaningful commits
+
+❌ No dummy text or Lorem Ipsum — must use relevant content
+
+
+
+
+
+## 🔗 Submission
+- **Live Link :** YOUR_DEPLOYED_URL_HERE  
+- **GitHub Private Repository:** YOUR_REPO_URL_HERE  
 
 ---
