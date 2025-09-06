@@ -84,7 +84,9 @@
         <h1 class="text-4xl font-extrabold text-[#1F2937]">
           Plant a Tree, Grow a Future
         </h1>
-        <p class="text-lg text-[#1F293750] max-w-2xl">
+        <p
+          class="text-lg text-[#1F2937] font-bold md:text-[#1F293750] max-w-2xl"
+        >
           Join our mission to plant 1 million trees and make the Earth greener
           for future generations.
         </p>
@@ -95,13 +97,15 @@
       </section>
     </header>
     <main class="bg-[#DCFCE7]">
-      <section class="py-20 px-10">
+      <section class="py-20 px-0 md:px-10">
         <h1
           class="text-center text-2xl inter font-semibold text-[#1F2937] pb-8"
         >
           Choose Your Trees
         </h1>
-        <div class="grid grid-cols-[16fr_67fr_16fr] gap-4 w-full">
+        <div
+          class="grid grid-cols-1 md:grid-cols-[12fr_73fr_14fr] gap-4 w-full"
+        >
           <div class="left flex flex-col gap-2">
             <h3 class="">Categories</h3>
             <div id="cat-entries" class="categories">
@@ -112,7 +116,10 @@
               </button>
             </div>
           </div>
-          <div class="middle bg-green-300">Middle</div>
+          <div
+            id="product-entries"
+            class="middle grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-4 pb-4 items-stretch"
+          ></div>
           <div class="right bg-red-300">Right</div>
         </div>
       </section>
