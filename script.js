@@ -1,5 +1,5 @@
 let totalPrice = 0;
-let totalCart = 0;
+let totalCart = false;
 const totalPriceEl = document.getElementById("total-price");
 
 const loadCategories = () => {
@@ -113,15 +113,14 @@ const addToCart = (product) => {
    </button>
   </div>
   `;
-  if (totalCart === 0) {
+  if (totalCart === false) {
     document.getElementById("total-price-container").classList.remove("hidden");
   }
-  totalCart++;
+  totalCart = true;
   cartSection.prepend(cartEntry);
 };
 
 document.getElementById("cart-section").addEventListener("click", (e) => {
-  totalCart--;
   const button = e.target.closest(".cross-button");
   const cartItem = button.parentElement;
   const priceEl = cartItem.querySelector(".price");
@@ -130,6 +129,7 @@ document.getElementById("cart-section").addEventListener("click", (e) => {
   totalPriceEl.textContent = totalPrice;
   if (totalPrice === 0) {
     document.getElementById("total-price-container").classList.add("hidden");
+    totalCart = false;
   }
 
   cartItem.remove();
