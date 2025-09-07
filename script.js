@@ -12,6 +12,26 @@ const loadAllProducts = () => {
     .then((res) => res.json())
     .then((json) => displayAllProducts(json.plants));
 };
+
+const loadTreeDetails = (treeid) => {
+  fetch(`https://openapi.programming-hero.com/api/plant/${treeid}`)
+    .then((res) => res.json())
+    .then((json) => treeModalView(json.plants));
+};
+
+const treeModalView = (plant) => {
+  const detailBox = document.getElementById("details-container");
+  detailBox.innerHTML = `
+  <h3 class="text-xl font-bold mb-4 inter">${plant.name}</h3>
+  <img src="${plant.image}" alt="${plant.name}" class="max-w-full max-h-64 object-cover rounded-lg mb-4" />
+  <p class="mb-2 mont"><strong>Category:</strong> ${plant.category}</p>
+  <p class="mb-2 mont"><strong>Price:</strong> ৳${plant.price}</p>
+  <p class="text-sm text-gray-600 mont">
+    ${plant.description}
+  </p>
+  `;
+  document.getElementById("tree_modal").showModal();
+};
 const displayCategory = (categories) => {
   const categoryContainer = document.getElementById("cat-entries");
   for (let category of categories) {
@@ -41,7 +61,7 @@ const displayAllProducts = (products) => {
     />
   </div>
   <div class="mb-2 flex-1 min-h-[100px]">
-    <h2 class="text-lg font-bold text-gray-900">${product["name"]}</h2>
+    <h2 onclick = "loadTreeDetails(${product.id})" class="text-lg font-bold text-gray-900">${product["name"]}</h2>
     <p class="text-gray-600 text-sm mt-1">
       ${product["description"]}
     </p>
