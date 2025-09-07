@@ -116,7 +116,7 @@
             >
               <button
                 id="category-0"
-                class="hover:bg-[#15803D] hover:text-white cursor-pointer w-[100%] text-left px-4 py-2 rounded-lg inter"
+                class="hover:bg-[#15803D] hover:text-white cursor-pointer w-[100%] text-left px-4 py-2 rounded-lg inter active"
               >
                 All Trees
               </button>
@@ -126,16 +126,30 @@
             id="product-entries"
             class="middle grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-4 pb-4 items-stretch"
           ></div>
-          <div class="right bg-white min-h-[1200px]">Right</div>
+          <div class="right bg-white min-h-[1200px]">
+            <h1 class="mont text-lg font-bold text-green-400 ml-2">
+              Add To Cart
+            </h1>
+            <div class="flex flex-col gap-2" id="cart-section"></div>
+            <div
+              id="total-price-container"
+              class="price flex justify-between iems-center hidden pt-2 px-2"
+            >
+              <p class="mont font-semibold">Price:</p>
+              <p id="total-price" class="mont font-semibold"></p>
+            </div>
+          </div>
         </div>
       </section>
       <section class="flex flex-col items-center justify-center">
-        <h2 class="mont font-bold text-4xl">About the Campaign</h2>
-        <div class="flex px-20 py-10 justify-center items-center gap-8">
-          <div class="w-[50%] flex justify-end">
+        <h2 class="mont font-bold text-4xl text-center">About the Campaign</h2>
+        <div
+          class="flex flex-col md:flex-row px-10 py-5 md:px-20 md:py-10 justify-center items-center gap-8"
+        >
+          <div class="md:w-[50%] flex justify-end">
             <img class="" src="./assets/about.png" alt="" />
           </div>
-          <div class="mont w-[50%] text-[#1F2937] inter">
+          <div class="mont md:w-[50%] text-[#1F2937] inter">
             <p class="text-opacity-80 max-w-[600px]">
               Green Earth is a global tree plantation initiative dedicated to
               fighting climate change. Since our start, we’ve planted over
@@ -159,16 +173,52 @@
         >
           <div class="left px-15 py-10 bg-white rounded-md">
             <p class="text-center text-xl text-[#15803D] font-bold">500K+</p>
-            <p class="text-center">Trees Planted</p>
+            <p class="text-center min-w-[200px]">Trees Planted</p>
           </div>
           <div class="middle px-15 py-10 bg-white rounded-md">
             <p class="text-center text-xl text-[#15803D] font-bold">120+</p>
-            <p class="text-center">Communities Involved</p>
+            <p class="text-center min-w-[200px]">Communities Involved</p>
           </div>
           <div class="right px-15 py-10 bg-white rounded-md">
             <p class="text-center text-xl text-[#15803D] font-bold">30+</p>
-            <p class="text-center">Countries Reached</p>
+            <p class="text-center min-w-[200px]">Countries Reached</p>
           </div>
+        </div>
+      </section>
+      <section
+        class="max-h-[900px] flex flex-col items-center justify-center bg-[#166534] py-40 px-5 md:px-0"
+      >
+        <h2 class="text-white text-xl font-semibold text-center mb-6">
+          Plant a Tree Today
+        </h2>
+        <div
+          class="bg-[#15803D] p-8 rounded-lg shadow-lg w-full max-w-md sm:max-w-lg lg:max-w-xl"
+        >
+          <form class="space-y-4">
+            <input
+              type="text"
+              placeholder="Your Name"
+              class="input input-neutral w-full"
+            />
+            <input
+              type="text"
+              placeholder="Your Email Adress"
+              class="input input-neutral w-full"
+            />
+            <select class="select select-neutral w-full">
+              <option disabled selected>Donate A Tree</option>
+              <option>1 Tree</option>
+              <option>5 Trees</option>
+              <option>10 Trees</option>
+              <option>20 Trees</option>
+            </select>
+            <button
+              type="submit"
+              class="w-full bg-yellow-400 text-green-900 font-semibold py-2 rounded-full hover:bg-yellow-500 transition"
+            >
+              Donate Now
+            </button>
+          </form>
         </div>
       </section>
     </main>

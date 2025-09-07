@@ -1,3 +1,7 @@
+let totalPrice = 0;
+let totalCart = 0;
+const totalPriceEl = document.getElementById("total-price");
+
 const loadCategories = () => {
   fetch("https://openapi.programming-hero.com/api/categories")
     .then((res) => res.json())
@@ -50,6 +54,7 @@ const displayAllProducts = (products) => {
     <span class="text-gray-900 font-semibold text-sm">৳${product["price"]}</span>
   </div>
   <button
+    id = "add-to-cart-${product["id"]}"
     class="w-full bg-green-700 text-white text-center py-3 rounded-lg font-semibold hover:bg-green-800 transition-colors cursor-pointer"
   >
     Add to Cart
@@ -80,6 +85,54 @@ document.getElementById("cat-entries").addEventListener("click", (e) => {
         displayAllProducts(json.plants);
       });
   }
+});
+
+document.getElementById("product-entries").addEventListener("click", (e) => {
+  if (e.target.id.startsWith("add-to-cart-")) {
+    const plantId = e.target.id.replace("add-to-cart-", "");
+    fetch(`https://openapi.programming-hero.com/api/plant/${plantId}`)
+      .then((res) => res.json())
+      .then((json) => addToCart(json.plants));
+  }
+});
+const addToCart = (product) => {
+  const cartSection = document.getElementById("cart-section");
+  const cartEntry = document.createElement("div");
+  totalPrice += parseInt(product.price);
+  totalPriceEl.textContent = totalPrice;
+  cartEntry.innerHTML = `
+  <div
+    class="flex justify-between items-center py-2 bg-[#F0FDF4] mx-2 rounded-lg px-2"
+  >
+  <div class="">
+    <p>${product.name}</p>
+    <p class="price">${product.price}</p>
+  </div>
+   <button id="" class="cross-button cursor-pointer px-2 py-1 rounded-full bg-white">
+     <i class="fa-solid fa-xmark"></i>
+   </button>
+  </div>
+  `;
+  if (totalCart === 0) {
+    document.getElementById("total-price-container").classList.remove("hidden");
+  }
+  totalCart++;
+  cartSection.prepend(cartEntry);
+};
+
+document.getElementById("cart-section").addEventListener("click", (e) => {
+  totalCart--;
+  const button = e.target.closest(".cross-button");
+  const cartItem = button.parentElement;
+  const priceEl = cartItem.querySelector(".price");
+  const price = parseInt(priceEl.textContent);
+  totalPrice -= price;
+  totalPriceEl.textContent = totalPrice;
+  if (totalPrice === 0) {
+    document.getElementById("total-price-container").classList.add("hidden");
+  }
+
+  cartItem.remove();
 });
 
 loadCategories();
