@@ -29,7 +29,7 @@ const displayAllProducts = (products) => {
   for (let product of products) {
     const productDiv = document.createElement("div");
     productDiv.innerHTML = `
-    <div class="w-full flex flex-col bg-green-50 rounded-xl p-4 shadow-md h-full">
+    <div class="inter w-full flex flex-col bg-green-50 rounded-xl p-4 shadow-md h-full">
   <div class="h-48 rounded-lg mb-4">
     <img
       class="w-full h-full object-cover rounded-lg"
