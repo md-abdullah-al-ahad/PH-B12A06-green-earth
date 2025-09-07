@@ -23,7 +23,7 @@ const treeModalView = (plant) => {
   const detailBox = document.getElementById("details-container");
   detailBox.innerHTML = `
   <h3 class="text-xl font-bold mb-4 inter">${plant.name}</h3>
-  <img src="${plant.image}" alt="${plant.name}" class="max-w-full max-h-64 object-cover rounded-lg mb-4" />
+  <img src="${plant.image}" alt="${plant.name}" class="max-w-full max-h-80 object-cover rounded-lg mb-4" />
   <p class="mb-2 mont"><strong>Category:</strong> ${plant.category}</p>
   <p class="mb-2 mont"><strong>Price:</strong> ৳${plant.price}</p>
   <p class="text-sm text-gray-600 mont">
