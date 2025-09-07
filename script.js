@@ -2,12 +2,23 @@ let totalPrice = 0;
 let totalCart = false;
 const totalPriceEl = document.getElementById("total-price");
 const horiLine = document.getElementById("hori-line");
+const manageSpinner = (status) => {
+  if (status === true) {
+    document.getElementById("spinner").classList.remove("hidden");
+    document.getElementById("product-entries").classList.add("hidden");
+  } else {
+    document.getElementById("spinner").classList.add("hidden");
+    document.getElementById("product-entries").classList.remove("hidden");
+  }
+};
+
 const loadCategories = () => {
   fetch("https://openapi.programming-hero.com/api/categories")
     .then((res) => res.json())
     .then((json) => displayCategory(json.categories));
 };
 const loadAllProducts = () => {
+  manageSpinner(true);
   fetch("https://openapi.programming-hero.com/api/plants")
     .then((res) => res.json())
     .then((json) => displayAllProducts(json.plants));
@@ -83,6 +94,7 @@ const displayAllProducts = (products) => {
     `;
     productContainer.append(productDiv);
   }
+  manageSpinner(false);
 };
 
 document.getElementById("cat-entries").addEventListener("click", (e) => {
