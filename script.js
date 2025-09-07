@@ -1,7 +1,7 @@
 let totalPrice = 0;
 let totalCart = false;
 const totalPriceEl = document.getElementById("total-price");
-
+const horiLine = document.getElementById("hori-line");
 const loadCategories = () => {
   fetch("https://openapi.programming-hero.com/api/categories")
     .then((res) => res.json())
@@ -115,6 +115,7 @@ const addToCart = (product) => {
   `;
   if (totalCart === false) {
     document.getElementById("total-price-container").classList.remove("hidden");
+    horiLine.classList.remove("hidden");
   }
   totalCart = true;
   cartSection.prepend(cartEntry);
@@ -129,6 +130,7 @@ document.getElementById("cart-section").addEventListener("click", (e) => {
   totalPriceEl.textContent = totalPrice;
   if (totalPrice === 0) {
     document.getElementById("total-price-container").classList.add("hidden");
+    horiLine.classList.add("hidden");
     totalCart = false;
   }
 
