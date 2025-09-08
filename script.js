@@ -135,15 +135,15 @@ const addToCart = (product) => {
   alert(`${product.name} added to the cart!`);
   cartEntry.innerHTML = `
   <div
-    class="flex justify-between items-center py-2 bg-[#F0FDF4] mx-2 rounded-lg px-2"
+    class="group relative flex items-center gap-3 p-3 mx-2 rounded-xl bg-white border border-green-200 shadow hover:shadow-md transition"
   >
-  <div class="">
-    <p class="mont">${product.name}</p>
-    <p class="price mont">৳${product.price}</p>
-  </div>
-   <button id="" class="cross-button cursor-pointer px-2 py-1 rounded-full bg-white text-red-700 hover:bg-red-700 hover:text-white transition-colors">
-     <i class="fa-solid fa-xmark"></i>
-   </button>
+    <div class="flex-1 min-w-0">
+      <p class="mont font-medium text-gray-900 truncate">${product.name}</p>
+      <p class="price mont text-green-700 font-semibold">৳${product.price}</p>
+    </div>
+    <button id="" class="cross-button btn btn-sm btn-circle btn-outline border-red-300 text-red-600 hover:bg-red-600 hover:text-white hover:border-red-600 transition">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
   </div>
   `;
   if (totalCart === false) {
