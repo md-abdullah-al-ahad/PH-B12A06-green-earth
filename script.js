@@ -132,6 +132,7 @@ const addToCart = (product) => {
   const cartEntry = document.createElement("div");
   totalPrice += parseInt(product.price);
   totalPriceEl.textContent = totalPrice;
+  alert(`${product.name} added to the cart!`);
   cartEntry.innerHTML = `
   <div
     class="flex justify-between items-center py-2 bg-[#F0FDF4] mx-2 rounded-lg px-2"
@@ -140,7 +141,7 @@ const addToCart = (product) => {
     <p>${product.name}</p>
     <p class="price">${product.price}</p>
   </div>
-   <button id="" class="cross-button cursor-pointer px-2 py-1 rounded-full bg-white">
+   <button id="" class="cross-button cursor-pointer px-2 py-1 rounded-full bg-white text-red-700 hover:bg-red-700 hover:text-white transition-colors">
      <i class="fa-solid fa-xmark"></i>
    </button>
   </div>
