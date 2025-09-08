@@ -84,3 +84,14 @@ Ans: In string concatenetation we have to use a lot of + to create the desired s
 This can be done by using template literal:
 
 `I am ${name} a student of ${deptName} department.`
+
+For multiline,
+
+"Line One\n" + "Line Two";
+
+This is the concatenation way of doing it.
+
+`Line one
+Line Two`;
+
+This is the template literal way.
