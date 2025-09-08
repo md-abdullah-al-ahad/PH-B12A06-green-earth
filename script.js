@@ -33,7 +33,7 @@ const loadTreeDetails = (treeid) => {
 const treeModalView = (plant) => {
   const detailBox = document.getElementById("details-container");
   detailBox.innerHTML = `
-  <h3 class="text-xl font-bold mb-4 inter">${plant.name}</h3>
+  <h3 class="text-xl font-bold mb-4 font-sans">${plant.name}</h3>
   <img src="${plant.image}" alt="${plant.name}" class="max-w-full max-h-80 object-cover rounded-lg mb-4" />
   <p class="mb-2 mont"><strong>Category:</strong> ${plant.category}</p>
   <p class="mb-2 mont"><strong>Price:</strong> ৳${plant.price}</p>
@@ -72,7 +72,7 @@ const displayAllProducts = (products) => {
     />
   </div>
   <div class="mb-2 flex-1 min-h-[100px]">
-    <h2 onclick = "loadTreeDetails(${product.id})" class="text-lg font-bold text-gray-900">${product["name"]}</h2>
+    <h2 onclick = "loadTreeDetails(${product.id})" class="text-lg font-bold text-gray-900 cursor-pointer font-sans">${product["name"]}</h2>
     <p class="text-gray-600 text-sm mt-1">
       ${product["description"]}
     </p>
@@ -139,7 +139,7 @@ const addToCart = (product) => {
     class="group relative flex items-center gap-3 p-3 mx-2 rounded-xl bg-white border border-green-200 shadow hover:shadow-md transition"
   >
     <div class="flex-1 min-w-0">
-      <p class="mont font-medium text-gray-900 truncate">${product.name}</p>
+      <p class="mont font-medium text-gray-900 truncate font-sans">${product.name}</p>
       <p class="price mont text-green-700 font-semibold">৳${product.price}</p>
     </div>
     <button id="" class="cross-button btn btn-sm btn-circle btn-outline border-red-300 text-red-600 hover:bg-red-600 hover:text-white hover:border-red-600 transition">
