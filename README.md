@@ -87,11 +87,11 @@ This can be done by using template literal:
 
 For multiline,
 
-"Line One\n" + "Line Two";
+console.log("Line One\n" + "Line Two");
 
 This is the concatenation way of doing it.
 
-`Line one
-Line Two`;
+console.log(`Line one
+Line Two`);
 
 This is the template literal way.
