@@ -24,8 +24,8 @@ The above code will create a new array squareNums with the squares of the entry 
 forEach() - This also works similar to the map method but it does not return anything. t just performs operations by iterating.. For example,
 
 ```js
-const nums = [1,2,3];
-nums.forEach(num => console.log(num\*num));
+const nums = [1, 2, 3];
+nums.forEach((num) => console.log(num * num));
 ```
 
 filter() - This will also return an array, but the new array will only consist of the elements that pass the condition specified in the function. For example,
@@ -95,7 +95,7 @@ Here name will have the value "Abdullah" and dept will have the value "CSE".
 
 # Explain template literals in ES6. How are they different from string concatenation?
 
-Ans: In string concatenetation we have to use a lot of + to create the desired string. But the same thing can be done by using template literals where we create a template and dynamically assign the values that we need. Also by template literals we can use javascript expressions inside the dynamic assignment. Also we can create multi line strings just by going to a new line no need to use \n like before. For example,
+Ans: In string concatenation, we have to use many + operators to create the desired string. But the same thing can be done by using template literals where we create a template and dynamically insert the values we need. Also, with template literals we can use JavaScript expressions inside the dynamic placeholders. Also, we can create multi line strings just by going to a new line no need to use \n like before. For example,
 
 ```js
 "I am " + name + " a student of " + deptName + "department.";
@@ -103,7 +103,9 @@ Ans: In string concatenetation we have to use a lot of + to create the desired s
 
 This can be done by using template literal:
 
-`I am ${name} a student of ${deptName} department.`
+```js
+`I am ${name} a student of ${deptName} department.`;
+```
 
 For multiline,
 
