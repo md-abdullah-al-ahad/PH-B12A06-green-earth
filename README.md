@@ -116,7 +116,7 @@ console.log("Line One\n" + "Line Two");
 This is the concatenation way of doing it.
 
 ```js
-console.log(`Line one\n
+console.log(`Line one
 Line Two`);
 ```
 
