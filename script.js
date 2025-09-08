@@ -131,15 +131,15 @@ const addToCart = (product) => {
   const cartSection = document.getElementById("cart-section");
   const cartEntry = document.createElement("div");
   totalPrice += parseInt(product.price);
-  totalPriceEl.textContent = totalPrice;
+  totalPriceEl.textContent = `৳${totalPrice}`;
   alert(`${product.name} added to the cart!`);
   cartEntry.innerHTML = `
   <div
     class="flex justify-between items-center py-2 bg-[#F0FDF4] mx-2 rounded-lg px-2"
   >
   <div class="">
-    <p>${product.name}</p>
-    <p class="price">${product.price}</p>
+    <p class="mont">${product.name}</p>
+    <p class="price mont">৳${product.price}</p>
   </div>
    <button id="" class="cross-button cursor-pointer px-2 py-1 rounded-full bg-white text-red-700 hover:bg-red-700 hover:text-white transition-colors">
      <i class="fa-solid fa-xmark"></i>
@@ -158,9 +158,9 @@ document.getElementById("cart-section").addEventListener("click", (e) => {
   const button = e.target.closest(".cross-button");
   const cartItem = button.parentElement;
   const priceEl = cartItem.querySelector(".price");
-  const price = parseInt(priceEl.textContent);
+  const price = parseInt(priceEl.textContent.replace("৳", ""));
   totalPrice -= price;
-  totalPriceEl.textContent = totalPrice;
+  totalPriceEl.textContent = `৳${totalPrice}`;
   if (totalPrice === 0) {
     document.getElementById("total-price-container").classList.add("hidden");
     horiLine.classList.add("hidden");
