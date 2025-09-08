@@ -130,6 +130,7 @@ document.getElementById("product-entries").addEventListener("click", (e) => {
 const addToCart = (product) => {
   const cartSection = document.getElementById("cart-section");
   const cartEntry = document.createElement("div");
+  cartEntry.classList.add("cart-entry");
   totalPrice += parseInt(product.price);
   totalPriceEl.textContent = `৳${totalPrice}`;
   alert(`${product.name} added to the cart!`);
@@ -156,7 +157,7 @@ const addToCart = (product) => {
 
 document.getElementById("cart-section").addEventListener("click", (e) => {
   const button = e.target.closest(".cross-button");
-  const cartItem = button.parentElement;
+  const cartItem = button.closest(".cart-entry");
   const priceEl = cartItem.querySelector(".price");
   const price = parseInt(priceEl.textContent.replace("৳", ""));
   totalPrice -= price;
