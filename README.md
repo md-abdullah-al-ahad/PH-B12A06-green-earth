@@ -8,7 +8,7 @@ Var - Var is function scoped but if the variable that is declared with var not i
 
 Let - let is block scoped, which means variables declared with let cannot be accessed outside the block where they were declared. Let variables are also hoisted but it is not initialized which means if we try to access a variable before initializing them it will throw a ReferenceError, which is also called the Temporal Dead Zone (TDZ). Variables declared with let can not be redeclared but it can be reassigned. That means we can change the value of a variable if we use the let keyword.
 
-Const - Const is also block scoped and hoisted but not intialized just like the let keyword variable. It also has the temporal dead zone(TDZ). he only difference between const and let is that let variables can be reassigned, while const variables cannot. This means variables declared with const cannot be redeclared or reassigned..
+Const - Const is also block scoped and hoisted but not intialized just like the let keyword variable. It also has the temporal dead zone(TDZ). The only difference between const and let is that let variables can be reassigned, while const variables cannot. This means variables declared with const cannot be redeclared or reassigned..
 
 # What is the difference between map(), forEach(), and filter()?
 
